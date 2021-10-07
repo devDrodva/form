@@ -5,7 +5,7 @@ import './Form.css'
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate)
-  
+
   const hiddenUserNameErrorText = values.username === ''
   const hiddenEmailErrorText = values.email === ''
   const hiddenPasswordErrorText = values.password.length !== 6
@@ -61,7 +61,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.password2}
             onChange={handleChange}
           />
-          {hiddenPassword2ErrorText ? errors.password2 && <p>{errors.password2}</p> : null }
+          {hiddenPassword2ErrorText ? errors.password2 && <p>{errors.password2}</p> : null}
         </div>
         <button className='form-input-btn' type='submit'>
           Sign up
