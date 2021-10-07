@@ -5,6 +5,11 @@ import './Form.css'
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate)
+  
+  const hiddenUserNameErrorText = values.username === ''
+  const hiddenEmailErrorText = values.email === ''
+  const hiddenPasswordErrorText = values.password.length !== 6
+  const hiddenPassword2ErrorText = values.password2 !== values.password || values.password2.length === 0
 
   return (
     <div className='form-content-right'>
@@ -20,7 +25,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.username}
             onChange={handleChange}
           />
-          {errors.username && <p>{errors.username}</p>}
+          {hiddenUserNameErrorText ? errors.username && <p>{errors.username}</p> : null}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Email</label>
@@ -32,7 +37,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.email}
             onChange={handleChange}
           />
-          {errors.email && <p>{errors.email}</p>}
+          {hiddenEmailErrorText ? errors.email && <p>{errors.email}</p> : null}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Password</label>
@@ -44,7 +49,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.password}
             onChange={handleChange}
           />
-          {errors.password && <p>{errors.password}</p>}
+          {hiddenPasswordErrorText ? errors.password && <p>{errors.password}</p> : null}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Confirm Password</label>
@@ -56,7 +61,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.password2}
             onChange={handleChange}
           />
-          {errors.password2 && <p>{errors.password2}</p>}
+          {hiddenPassword2ErrorText ? errors.password2 && <p>{errors.password2}</p> : null }
         </div>
         <button className='form-input-btn' type='submit'>
           Sign up

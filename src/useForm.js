@@ -7,7 +7,9 @@ const useForm = (callback, validate) => {
     password: '',
     password2: '',
   })
+
   const [errors, setErrors] = useState({})
+
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
@@ -29,8 +31,7 @@ const useForm = (callback, validate) => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errors])
+  }, [callback, errors, isSubmitting])
 
   return { handleChange, handleSubmit, values, errors }
 }
