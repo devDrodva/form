@@ -6,6 +6,7 @@ import './Form.css'
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate)
 
+  // I will be working on this validation, a good approach is to make a useState
   const hiddenUserNameErrorText = values.username === ''
   const hiddenEmailErrorText = values.email === ''
   const hiddenPasswordErrorText = values.password.length !== 6

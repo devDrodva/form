@@ -30,7 +30,7 @@
   width: 80%;
   height: 80%;
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -156,7 +156,7 @@
   }
   .form-img {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -175,7 +175,7 @@
   }
   .form-img {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -194,7 +194,7 @@
   }
   .form-img {
     position: absolute;
-    top: 17%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
